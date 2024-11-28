@@ -5,13 +5,13 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
+    min-height: 100vh;
     background-color: #f5f5f5;
 }
 
 .form-container {
     background-color: white;
-    padding: 20px;
+    padding: 20px 30px;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 80%;
@@ -21,26 +21,31 @@ body {
 
 h1 {
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
+    font-size: 1.5em;
 }
 
 form {
     display: flex;
     flex-direction: column;
+    gap: 15px; /* 表單元素之間的統一間距 */
 }
 
 .input-group {
-    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 4px; /* 調整標籤與輸入框之間的間距 */
 }
 
-label {
-    display: block;
-    margin-bottom: 5px;
+.input-group label {
+    flex-shrink: 0;
+    width: 100px; /* 統一標籤寬度 */
     font-weight: bold;
+    text-align: left; /* 調整標籤向左對齊 */
 }
 
-input[type="text"], textarea {
-    width: 100%;
+.input-group input[type="text"], .input-group textarea {
+    flex: 1; /* 輸入框填滿剩餘空間 */
     padding: 8px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -50,27 +55,45 @@ input[type="text"], textarea {
 
 textarea {
     resize: none;
+    height: 80px; /* 調整高度以匹配整體比例 */
 }
 
-input[type="text"] {
-    margin-bottom: 10px;
+.input-group.inline {
+    display: flex;
+    gap: 10px; /* 調整 Input2 和 Input3 之間的間距 */
 }
 
-img {
-    width: 100%;
-    max-height: 300px;
-    object-fit: cover;
+.input-group.inline .input-pair {
+    display: flex;
+    align-items: center; /* 保證標籤和輸入框在同一行 */
+    gap: 55px; /* 調整標籤與輸入框之間的間距 */
+    flex: 1;
+}
+
+.input-group.inline .input-pair label {
+    flex-shrink: 0;
+    width: auto;
+    text-align: left;
+}
+
+.input-group.inline .input-pair input {
+    flex: 1;
+    padding: 8px;
+    border: 1px solid #ccc;
     border-radius: 4px;
 }
 
-.input-group:last-of-type img {
-    border: 1px solid #ccc;
-    padding: 5px;
-    background-color: #f9f9f9;
+.img-container {
+    text-align: center;
+    margin-top: 15px;
 }
 
-.input-group input[type="text"]:nth-child(2) {
-    width: calc(50% - 10px);
-    margin-right: 10px;
-    float: left;
+.img-container img {
+    width: 100%;
+    max-height: 300px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    object-fit: cover;
+    padding: 5px;
+    background-color: #f9f9f9;
 }
